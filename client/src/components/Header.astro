@@ -8,13 +8,16 @@ interface Props {
 // const { href, title, body } = Astro.props;
 ---
 
-<header>
-	<div id="logo" class="flex"></div>
-	<ul id="nav-link" class="flex">
-		<li>Home</li>
-		<li>Team</li>
-		<li>About</li>
-		<li>Events</li>
-		<li>Gallery</li>
+<header class="flex justify-between h-[7vh] px-2 items-center">
+	<div id="logo" class="w-10 h-10 add-border rounded-full"></div>
+	<ul id="nav-link" class="flex h-full items-center">
+		<li class="px-3">Home</li>
+		<li class="px-3">Team</li>
+		<li class="px-3">About</li>
+		<li class="px-3">Events</li>
+		<li class="px-3">Gallery</li>
 	</ul>
+	<button type="button" class="add-border py-1 px-3 rounded-md"
+		>Subscribe</button
+	>
 </header>
