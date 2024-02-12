@@ -1,23 +1,58 @@
 ---
-interface Props {
-	title: string;
-	body: string;
-	href: string;
-}
+// interface Props {
+// 	title: string;
+// 	body: string;
+// 	href: string;
+// }
 
 // const { href, title, body } = Astro.props;
+// const nav = ["Home", "Team", "About", "Events", "Gallery"];
+const nav = [
+	{ name: "Home", link: "/" },
+	{ name: "Teams", link: "/teams" },
+	{ name: "About", link: "/about" },
+	{ name: "Events", link: "http://" },
+	{ name: "Gallery", link: "http://" },
+];
 ---
 
 <header class="flex justify-between h-[7vh] px-2 items-center">
-	<div id="logo" class="w-10 h-10 add-border rounded-full"></div>
-	<ul id="nav-link" class="flex h-full items-center">
-		<li class="px-3">Home</li>
-		<li class="px-3">Team</li>
-		<li class="px-3">About</li>
-		<li class="px-3">Events</li>
-		<li class="px-3">Gallery</li>
+	<div id="logo" class="w-10 h-10 add-border rounded-full z-10"></div>
+
+	<ul
+		id="nav-link"
+		class="hidden bg-white md:flex m-auto flex-col md:flex-row w-screen md:w-auto absolute md:static h-cover text-2xl md:text-sm top-12 left-0 md:h-full items-center"
+	>
+		{
+			nav.map((el) => (
+				<>
+					<li class="px-4 py-5 md:py-0">
+						<a href={el.link}>{el.name}</a>
+					</li>
+					<hr class="w-[80%] md:hidden" />
+				</>
+			))
+		}
 	</ul>
 	<button type="button" class="add-border py-1 px-3 rounded-md"
 		>Subscribe</button
 	>
 </header>
+
+<script>
+	const logo = document.getElementById("logo");
+	const nav = document.querySelector("#nav-link") as HTMLElement;
+	let show = false;
+
+	logo.addEventListener("click", (e) => {
+		show = !show;
+		let aa = show
+			? ((nav.style.display = "flex"), (nav.style.animation = "transi"))
+			: ((nav.style.display = "none"), (nav.style.animation = "transi"));
+	});
+</script>
+<style>
+	#nav-link {
+		transition: all 2s;
+	}
+</style>
