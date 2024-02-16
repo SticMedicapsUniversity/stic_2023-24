@@ -1,0 +1,33 @@
+---
+const photos = [
+    { name: "SampleText", href: "" },
+    { name: "SampleText", href: "" },
+    { name: "SampleText", href: "" },
+];
+---
+
+<h1 class="text-2xl my-5 mt-5">Gallery</h1>
+<div class="md:flex m-auto justify-center p-auto">
+    <div class="photoGallery">
+        {
+            photos.map((img) => (
+                <div class=" md:w-[20vw] h-[20vh] m-2 border rounded-lg border-blue-600">
+                    <img src="" alt="alt text" />
+                </div>
+            ))
+        }
+    </div>
+    <div class="photoGallery">
+        {
+            photos.map((img) => (
+                <div class="md:w-[20vw] h-[20vh] m-2 border  rounded-lg bg-blue-300 border-blue-600">
+                    <img src="" alt="alt text" />
+                </div>
+            ))
+        }
+    </div>
+</div>
+<style>
+    .photoGallery {
+    }
+</style>
