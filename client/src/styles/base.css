@@ -6,4 +6,8 @@
     .add-border {
         @apply border border-gray-500
     }
+
+    .hoverScale {
+        @apply hover:scale-105 transition-all
+    }
 }

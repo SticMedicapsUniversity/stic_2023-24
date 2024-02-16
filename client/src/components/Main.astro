@@ -1,23 +1,44 @@
-<main class="w-full h-[93vh] border border-black">
+---
+import Image from "../../public/STIC_cover.jpeg";
+---
+
+<main
+    class="w-full h-[93vh] bg-no-repeat bg-cover bg-gradient-to-b from-blue-900 to-black text-white border bg-blend-overlay border-black mainn"
+>
     <h1
-        class="text-center py-5 pt-[150px] text-3xl px-[5vw] md:text-5xl md:px-[15vw]"
+        class="sm:leading-normal headFont md:leading-snug text-white text-center py-5 pt-[150px] text-3xl px-[5vw] md:text-5xl md:px-[15vw]"
     >
         Student Technical & Innovation Club Medicaps
     </h1>
 
-    <div class="md:py-10 py-5 text-center w-full text-xl relative font-light">
+    <div
+        class="w-[90%] md:w-[40%] border rounded-lg flex justify-between h-auto m-auto my-5 text-center text-xl relative font-light"
+    >
         <input
             type="text"
-            class="border mx-auto md:w-[45%] h-9 rounded-lg px-2 border-black"
+            class="border md:w-full w-[80%] rounded-lg rounded-e-none text-slate-800 py-1 px-2 border-black"
         />
-        <button type="submit" class="text-base">Submit</button>
+        <button
+            type="submit"
+            class="hoverScale text-base rounded-lg md:px-7 px-2 hover:bg-red-700 rounded-s-none"
+            >Submit</button
+        >
     </div>
     <div class="m-auto text-center">
-        <button type="button" class="border rounded-md md:px-10 px-7 py-3"
+        <button
+            type="button"
+            class="hoverScale hover:bg-blue-900 border rounded-md md:px-10 px-7 py-3 backdrop-blur-lg bg-black/50"
             >Blogs</button
         >
-        <button type="button" class="border rounded-md md:px-10 px-7 py-3"
+        <button
+            type="button"
+            class="hoverScale hover:bg-red-700 hover:font-bold border rounded-md md:px-10 px-7 py-3 backdrop-blur-lg bg-black/50"
             >TedX</button
         >
     </div>
 </main>
+<style>
+    .headFont {
+        font-family: "PT Sans", sans-serif;
+    }
+</style>
