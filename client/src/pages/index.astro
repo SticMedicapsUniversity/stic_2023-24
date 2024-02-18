@@ -4,6 +4,36 @@ import Header from "../components/Header.astro";
 import Main from "../components/Main.astro";
 import Gallery from "../components/Gallery.astro";
 // import Footer from "../components/Footer.astro";
+import EventCard from "../components/EventCard.astro";
+import image from "../../public/STIC_cover.jpeg";
+
+const events = [
+    {
+        title: "Hello World",
+        img: image,
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur voluptatibus nisi laborum voluptate quibusdam velit, temporibus saepe totam omnis! Eveniet consequatur facilis maxime?",
+    },
+    {
+        title: "Hello World",
+        img: image,
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur voluptatibus nisi laborum voluptate quibusdam velit, temporibus saepe totam omnis! Eveniet consequatur facilis maxime?",
+    },
+    {
+        title: "Hello World",
+        img: image,
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur voluptatibus nisi laborum voluptate quibusdam velit, temporibus saepe totam omnis! Eveniet consequatur facilis maxime?",
+    },
+    {
+        title: "Hello World",
+        img: image,
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur voluptatibus nisi laborum voluptate quibusdam velit, temporibus saepe totam omnis! Eveniet consequatur facilis maxime?",
+    },
+    {
+        title: "Hello World",
+        img: image,
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur voluptatibus nisi laborum voluptate quibusdam velit, temporibus saepe totam omnis! Eveniet consequatur facilis maxime?",
+    },
+];
 ---
 
 <html>
@@ -19,6 +49,33 @@ import Gallery from "../components/Gallery.astro";
         <Layout title="Welcome to Astro." />
         <Header />
         <Main />
+
+        <h1
+            class="md:text-4xl text-2xl transition-all cursor-pointer hover:underline underline-offset-3 my-5 mt-5 text-slate-300 mx-14"
+        >
+            Gallery
+        </h1>
         <Gallery />
+        <h1
+            class="md:text-4xl mt-28 text-2xl text-slate-300 mx-12 cursor-pointer hover:underline"
+        >
+            Events
+        </h1>
+        <div
+            class="overflow-x-scroll px-5 mt-10 h-[500px]"
+            style="scrollbar-width: none;"
+        >
+            <div class="flex space-x-4 w-max items-center">
+                {
+                    events.map((evnt) => (
+                        <EventCard
+                            title={evnt.title}
+                            imgSrc={evnt.img}
+                            desc={evnt.desc}
+                        />
+                    ))
+                }
+            </div>
+        </div>
     </body>
 </html>

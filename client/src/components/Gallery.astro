@@ -1,26 +1,32 @@
 ---
+import Image from "../../public/team.jpeg";
+// let Image = "";
 const photos = [
-    { name: "SampleText", href: "" },
-    { name: "SampleText", href: "" },
-    { name: "SampleText", href: "" },
+    { name: "SampleText", href: Image.src },
+    { name: "SampleText", href: Image.src },
+    { name: "SampleText", href: Image.src },
 ];
 const photos2 = [
-    { name: "SampleText", href: "" },
-    { name: "SampleText", href: "" },
-    { name: "SampleText", href: "" },
+    { name: "SampleText", href: Image.src },
+    { name: "SampleText", href: Image.src },
+    { name: "SampleText", href: Image.src },
 ];
 ---
 
 <script>
     import anime from "animejs";
 </script>
-<h1 class="text-2xl my-5 mt-5">Gallery</h1>
+
 <div class="md:flex m-auto justify-center p-auto">
     <div class="photoGallery left">
         {
             photos.map((img) => (
-                <div class=" md:w-[20vw] h-[25vh] m-2 border rounded-lg border-blue-600">
-                    <img src="" alt="alt text" />
+                <div class=" md:w-[25vw] h-auto m-4 add-border rounded-lg hover:shadow-xl hover:shadow-blue-700 hoverScale">
+                    <img
+                        src={img.href}
+                        alt="alt text"
+                        class="w-full h-auto rounded-2xl"
+                    />
                 </div>
             ))
         }
@@ -28,8 +34,12 @@ const photos2 = [
     <div class="photoGallery right">
         {
             photos2.map((img) => (
-                <div class="md:w-[20vw] h-[25vh] m-2 border  rounded-lg bg-blue-300 border-blue-600">
-                    <img src="" alt="alt text" />
+                <div class="md:w-[25vw] h-auto m-4 rounded-lg  add-border hoverScale">
+                    <img
+                        src={img.href}
+                        alt="alt text"
+                        class="w-full h-auto rounded-2xl"
+                    />
                 </div>
             ))
         }

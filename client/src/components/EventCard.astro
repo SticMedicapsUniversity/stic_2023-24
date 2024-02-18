@@ -1,0 +1,37 @@
+---
+import { sharpImageService } from "astro/config";
+
+type props = {
+    title: string;
+    imgSrc: URL;
+    desc: string;
+};
+
+const { title, imgSrc, desc } = Astro.props;
+---
+
+<div
+    class="w-[80vw] md:w-[25vw] h-[60vh] border border-blue-700 mt-5 m-auto rounded-lg hoverScale shadow-xl hover:shadow-blue-700"
+>
+    <div
+        class={` relative w-2/3 h-32  my-5 rounded-lg add-border z-10 m-auto `}
+    >
+        <img
+            src={imgSrc.src}
+            alt=""
+            srcset=""
+            class={`bg-gray-300 bg-blend-overlay -z-10`}
+        />
+        <div
+            class="absolute rounded-lg top-0 w-full h-full opacity-40 hover:bg-gradient-to-br from-blue-300"
+        >
+        </div>
+    </div>
+    <h1 class="text-center text-white text-2xl my-5">{title}</h1>
+    <p class="text-white mx-2 text-justify">{desc}</p>
+</div>
+<style>
+    .transi {
+        transition: 2s all;
+    }
+</style>

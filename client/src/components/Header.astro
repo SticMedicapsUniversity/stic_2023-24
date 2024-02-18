@@ -13,23 +13,27 @@ const nav = [
 	{ name: "About", link: "/about" },
 	{ name: "Events", link: "http://" },
 	{ name: "Gallery", link: "http://" },
+	{ name: "Gallery", link: "http://" },
 ];
 ---
 
 <header
-	class="absolute text-white w-full flex justify-between h-[7vh] px-2 items-center backdrop-blur-lg bg-black/5"
+	class="fixed md:absolute z-30 text-white w-full flex justify-between h-[7vh] px-2 items-center backdrop-blur-lg md:bg-black/5"
 >
-	<div id="logo" class="w-10 h-10 bg-white add-border rounded-full z-10">
+	<div
+		id="logo"
+		class="hoverScale w-10 h-10 bg-white add-border rounded-full"
+	>
 	</div>
 
 	<ul
 		id="nav-link"
-		class="hidden md:flex m-auto flex-col md:flex-row w-screen md:w-auto absolute md:static h-cover text-2xl md:text-sm top-12 left-0 md:h-full items-center"
+		class="hidden md:flex transition-all m-auto bg-black md:bg-opacity-5 flex-col md:flex-row w-screen md:w-auto absolute md:static h-cover text-2xl md:text-sm top-12 left-0 md:h-full items-center"
 	>
 		{
 			nav.map((el) => (
 				<>
-					<li class=" hoverScale px-4 py-5 md:py-0">
+					<li class=" hoverScale px-4 py-5 md:py-0 ">
 						<a href={el.link}>{el.name}</a>
 					</li>
 					<hr class="w-[80%] md:hidden" />
@@ -37,7 +41,9 @@ const nav = [
 			))
 		}
 	</ul>
-	<button type="button" class="hoverScale add-border py-1 px-3 rounded-md"
+	<button
+		type="button"
+		class="hoverScale add-border py-1 px-3 rounded-md hover:bg-red-700"
 		>Subscribe</button
 	>
 </header>
@@ -50,12 +56,7 @@ const nav = [
 	logo.addEventListener("click", (e) => {
 		show = !show;
 		let aa = show
-			? ((nav.style.display = "flex"), (nav.style.animation = "transi"))
-			: ((nav.style.display = "none"), (nav.style.animation = "transi"));
+			? (nav.style.display = "flex")
+			: (nav.style.display = "none");
 	});
 </script>
-<style>
-	#nav-link {
-		transition: all 2s;
-	}
-</style>
